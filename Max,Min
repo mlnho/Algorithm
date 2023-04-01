@@ -1,0 +1,33 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		int N = scanner.nextInt();
+
+		int[] numbers = new int[N];
+
+		for (int i = 0; i < numbers.length; i++) {
+
+//			System.out.println((i + 1) + "번에 들어갈 값을 입력해주세요");
+			numbers[i] = scanner.nextInt();
+
+		}
+		System.out.println(Arrays.toString(numbers));
+
+		int maxValue = Integer.MIN_VALUE; // 가장 작은수를 max변수로 설정하기
+		int minValue = Integer.MAX_VALUE; // 가장 큰값을 min변수로 설정하기
+
+		for (int i = 0; i < numbers.length; i++) {
+			if (minValue > numbers[i]) // numbers[i]가 minValue라는 변수에 들어가서 다음 인덱스랑 계속 비교하게된다.
+				minValue = numbers[i];
+			if (maxValue < numbers[i])
+				maxValue = numbers[i];
+
+		}
+		System.out.print(maxValue + " ");
+		System.out.println(minValue);
+	}
+}
