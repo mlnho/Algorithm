@@ -1,0 +1,18 @@
+import java.util.Arrays;
+
+public class Class_0403_Quiz_1 {
+	public static void main(String[] args) {
+
+		// 아래배열선언을 그대로 사용하여, 해당배열에 구구단의 결과를
+		// 할당하고 이를 출력하는 프로그램을 작성하세요.
+		int[][] res = new int[8][9]; // 2단부터 9단
+		
+		for (int i = 0; i < res.length; i++) { // res.length -> 행(row)
+			for (int j = 0; j < res[i].length; j++) { // res[i].length -> 열(col)
+				res[i][j] = (i+2) * (j+1);
+			}
+		}
+		System.out.println(Arrays.deepToString(res));
+
+	}
+}
