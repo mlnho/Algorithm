@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        int userA = sc.nextInt();
-        int userB = sc.nextInt();
+        long userA = sc.nextInt();
+        long userB = sc.nextInt();
 
         System.out.println( (userA + userB) * (userA-userB) );
     }
