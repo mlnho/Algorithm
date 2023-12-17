@@ -28,12 +28,9 @@ public class Main {
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (array[i][j] == 0) {
-                    continue;
-                } else if (1 <= array[i][j] && array[i][j] <= K) {
+                needRoom += array[i][j] / K;
+                if (array[i][j] % K != 0) {
                     needRoom++;
-                } else if (array[i][j] > K) {
-                    needRoom += array[i][j] / 2 + 1;
                 }
             }
         }
