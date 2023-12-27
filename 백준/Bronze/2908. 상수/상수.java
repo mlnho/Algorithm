@@ -11,12 +11,10 @@ public class Main {
         StringBuffer s1 = new StringBuffer(n1);
         StringBuffer s2 = new StringBuffer(n2);
 
-        s1.reverse().toString();
-        s2.reverse().toString();
 
-        int a = Integer.parseInt(String.valueOf(s1));
-        int b = Integer.parseInt(String.valueOf(s2));
-        
+        int a = Integer.parseInt((s1.reverse().toString()));
+        int b = Integer.parseInt((s2.reverse().toString()));
+
         if(a>b){
             System.out.println(a);
         } else {
