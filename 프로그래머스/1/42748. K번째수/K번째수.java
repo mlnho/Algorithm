@@ -5,22 +5,22 @@ class Solution {
         int[] answer = new int[commands.length];
 
 		for (int j = 0; j < commands.length; j++) {
-			int start = commands[j][0] - 1;
-			int end = commands[j][1] - 1;
+			int start = commands[j][0] ;
+			int end = commands[j][1] ;
 			int needNum = commands[j][2] - 1; // 새로운 배열에서 찾을 것
 
 			// System.out.println("needNum :" + needNum);
 
-			int a = array[start]; // array의 5
-			int b = array[end]; // array의 3
+			// int a = array[start]; // array의 5
+			// int b = array[end]; // array의 3
 			// System.out.println("a :" + a);
 			// System.out.println("b :" + b);
 
 			// 새로운 배열
-			int[] newArray = new int[commands[j][1] - commands[j][0] + 1];
+			int[] newArray = new int[end - start + 1];
 			int count = 0;
 			for (int k = 0; k < newArray.length; k++) {
-				newArray[k] = array[start + count];
+				newArray[k] = array[start-1 + count];
 				count++;
 			}
 			Arrays.sort(newArray); // 새로운 배열 정렬
