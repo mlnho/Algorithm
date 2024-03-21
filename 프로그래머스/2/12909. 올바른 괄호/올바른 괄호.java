@@ -1,33 +1,33 @@
 import java.util.*;
-
 class Solution {
     boolean solution(String s) {
-    boolean answer = true;
-        Stack<String> stack = new Stack<>();
+        boolean answer = true;
+
+        
+       Stack<String> stack = new Stack<>();
 
         for (int i = 0; i < s.length(); i++) {
-            if (stack.isEmpty()) {
-                if (String.valueOf(s.charAt(i)).equals("(")) {
-                    stack.push(String.valueOf(s.charAt(i)));
-                } else {
-                    answer = false;
-                    break;
-                }
-            } else {
-                if (String.valueOf(s.charAt(i)).equals(")")) {
+            String word = String.valueOf(s.charAt(i));
+            if (!stack.isEmpty()) {
+                if (word.equals(")")) {
                     if (stack.peek().equals("(")) {
                         stack.pop();
-                        answer = true;
+                    } else {
+                        stack.push(word);
                     }
                 } else {
-                    stack.push(String.valueOf(s.charAt(i)));
+                    stack.push(word);
                 }
+            } else {
+                stack.push(word);
             }
+
         }
-        
-         if(!stack.isEmpty()){
+
+        if(!stack.isEmpty()){
             answer = false;
         }
+
         return answer;
     }
 }
