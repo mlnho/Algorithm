@@ -6,10 +6,8 @@ class Solution {
         
         Arrays.sort(num_list);
         
-        int num =0;
         for(int i=5; i<num_list.length; i++){
-            answer[num] = num_list[i];
-            num++;
+            answer[i-5] = num_list[i];
         }
         
         return answer;
