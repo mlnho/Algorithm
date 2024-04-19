@@ -7,15 +7,13 @@ class Solution {
         
         int[] answer = new int[sum];
         
-        int index=0;
-        int count=0;
 
+        int index =0;
+        
         for(int i=0; i<arr.length; i++){
-            count += arr[i];
-            for(int j=index; j<count; j++){
-                answer[j]=arr[i];
+            for(int j=0; j<arr[i]; j++){
+                answer[index++]=arr[i];
             }
-            index += arr[i];
         }
         
         
